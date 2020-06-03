@@ -1,0 +1,177 @@
+#include<iostream>  
+#include<math.h>  
+  
+using namespace std;  
+int area(int sel)  
+{  
+    float a,b,c,s,r,area;  
+  
+    switch(sel)  
+    {  
+    case 1:  
+    {  
+        cout<<"enter Radius Of The Circle: ";  
+        cin>>r;  
+        area=3.14*r*r;  
+        break;  
+    }  
+    case 2:  
+    {  
+        cout<<"enter Length of side Of square:" <<endl;  
+        cin>>a;  
+        area=a*a;  
+        break;  
+    }  
+    case 3:  
+    {  
+        cout<<"enter Length And Breadth Of Rectangle:" <<endl;  
+        cin>>a>>b;  
+        area=a*b;  
+        break;  
+    }  
+    default:  
+        cout<<"\n Invalid Choice Try Again...!!!";  
+        break;  
+    }  
+  
+    cout<<"Area = "<<area<<endl;  
+}  
+  
+  
+  
+int minimum(int arr[], int n)  
+{  
+  
+    int temp = arr[0];  
+    for(int i=0; i<n; i++)  
+    {  
+        if(temp>arr[i])  
+        {  
+            temp=arr[i];  
+        }  
+    }  
+    return temp;  
+}  
+  
+void Pattern()  
+{  
+    cout<< "      *    " <<endl;  
+    cout<< "    * * *    " <<endl;  
+    cout<< "  * * * * *  " <<endl;  
+    cout<< "* * * * * * *" <<endl;  
+}  
+int main()  
+  
+{  
+    char y_n = 'y';  
+      
+while (y_n == 'y' || y_n =='Y')   
+{  
+  int choice;  
+    cout<< "Select 1 to calculate Area" <<endl;  
+    cout<< "Select 2 to execute Comparator" <<endl;  
+    cout<< "Select 3 to execute Summing System" <<endl;  
+    cout<< "Select 4 to find minimum of n numbers" <<endl;  
+    cout<< "Select 5 to print pattern on the screen" <<endl;  
+    cin>> choice;  
+  
+    switch(choice)  
+    {  
+    case 1:  
+    {  
+        cout<<"select 1 to calculate Area Of Circle" <<endl;  
+        cout<<"select 2 to calculate Area Of square" <<endl;  
+        cout<<"select 3 to calculate Area Of Rectangle " <<endl;  
+  
+  
+        int sel;  
+        cin>>sel;  
+        area(sel);  
+  
+  
+  
+        break;  
+    }  
+    case 2:  
+    {  
+        float x, y, z;  
+  
+        cout << "Enter three numbers: ";  
+        cin >> x >> y >> z;  
+  
+        if(x >= y && x >= z)  
+        {  
+            cout << "The Largest number is: " << x;  
+        }  
+  
+        if(y >= x && y >= z)  
+        {  
+            cout << "The Largest number is: " << y;  
+        }  
+  
+        if(z >= x && z >= y)  
+        {  
+            cout << "The Largest number is: " << z << endl;  
+        }  
+        break;  
+  
+    }  
+    case 3:  
+    {  
+        int i,n,x,sum=0;  
+        float avg;  
+  
+        cout<<"How many numbers do you want to enter :: " << endl;  
+        cin>>n;  
+  
+        for(i=1; i<=n; ++i)  
+        {  
+            cout<<"\nEnter number "<<i<<" :: ";  
+            cin>>x;  
+  
+            sum+=x;  
+        }  
+  
+        avg=(float)sum/(float)n;  
+  
+        cout<<"\n\nSum of "<<n<<" Numbers :: "<<sum<< endl;  
+  
+        cout<<"\n\nAverage of "<<n<<" Numbers :: "<<avg<< endl;  
+        break;  
+    }  
+    case 4:  
+    {  
+  
+  
+        int n;  
+        cout<<"Enter the how many numbers will be entered : ";  
+        cin>>n;  
+        int arr[n-1];  
+        cout<<"Enter the "<< n << " numbers"<<endl;  
+        for(int i=0; i<n; i++)  
+        {  
+            cin>>arr[i];  
+        }  
+        int smallest = minimum(arr, n);  
+        cout<<"the smallest number is: "<<smallest<<endl;  
+        break;  
+  
+    }  
+    case 5:  
+    {  
+  
+        Pattern();  
+        break;  
+  
+    }  
+    default:  
+    {  
+        cout <<"Invalid input, Please try Again.";  
+    }  
+    }  
+  cout << "Do you want to use the program again?(y/n)\n";  
+  cin >> y_n;  
+}  
+    return 0;  
+  
+}  
